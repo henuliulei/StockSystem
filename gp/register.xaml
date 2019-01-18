@@ -1,0 +1,45 @@
+﻿<Window x:Class="gp.register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gp"
+        mc:Ignorable="d"
+       Title="Register" Height="500" Width="1020" WindowStartupLocation="CenterScreen">
+    <Grid   >
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="images/w.jpg"/>
+        </Grid.Background>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label  FontSize="40" Foreground="Blue" Content="真实姓名:" HorizontalAlignment="Left" Margin="125,24,0,0" VerticalAlignment="Top"/>
+                <TextBox FontSize="32" Name="nameTb" HorizontalAlignment="Left" Height="40" Margin="26,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                <Label Name="label1" FontSize="35" Content="长度为2~5个字符" Margin="5 15" Foreground="Gray"></Label>
+            </StackPanel  >
+            <StackPanel Orientation="Horizontal">
+                <Label  FontSize="40" Foreground="Blue" Content="   登入名:"  HorizontalAlignment="Left" Margin="125,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.548,0.349"/>
+                <TextBox  FontSize="32"  Name="ageTb" HorizontalAlignment="Left" Height="40" Margin="31,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                <Label Name="label2" FontSize="35" Content="长度为2~5个字符" Margin="5 15" Foreground="Gray"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="40" Foreground="Blue" Content="      密码：" HorizontalAlignment="Left" Margin="125,30,0,0" VerticalAlignment="Top"/>
+                <PasswordBox PasswordChar="*" Name="passWordTb"  FontSize="32"  HorizontalAlignment="Left" Height="40" Margin="5,30,0,0"  VerticalAlignment="Top" Width="300"/>
+                <Label Name="label3" FontSize="35" Content="密码长度为3~9个字符" Margin="5 15" Foreground="Gray"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="40" Foreground="Blue" Content="        确认密码：" HorizontalAlignment="Left" Margin="25,30,0,0" VerticalAlignment="Top"/>
+                <PasswordBox PasswordChar="*" Name="qrPasswprdTb" HorizontalAlignment="Left"   FontSize="32"  Height="40" Margin="3,30,0,0"  VerticalAlignment="Top" Width="300"/>
+
+                <Label Name="label4" FontSize="35" Content="确认密码要和密码相同" Margin="5 15" Foreground="Gray"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="cancelBtn" Foreground="Black" FontSize="30" Height="60" Content="放弃操作" HorizontalAlignment="Left" Margin="160,31,0,0" VerticalAlignment="Top" Width="200" Background="{x:Null}" Click="cancelBtn_Click" >
+
+                </Button>
+                <Button Name="okBtn" Foreground="Black" FontSize="30" Content="确认提交" HorizontalAlignment="Left" Margin="165,31,0,0" VerticalAlignment="Top" Width="200" Height="60" Background="{x:Null}" Click="toLogin">
+
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

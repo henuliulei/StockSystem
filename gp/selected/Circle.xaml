@@ -1,0 +1,30 @@
+﻿<Page x:Class="gp.selected.circle"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gp.selected"
+      mc:Ignorable="d" 
+      d:DesignHeight="60" d:DesignWidth="1000" 
+      Title="circle">
+
+    <Grid >
+        <Border Background="Black" BorderBrush="Red" BorderThickness="2,3,3,2" >
+            <Canvas Name="canva1" ClipToBounds="True"   Height="50">
+                <StackPanel Name="sp1"    Orientation="Horizontal">
+                    <Label Foreground="Yellow"  Name="lab1" Content="沪 201.50 +5.91+0.26% 629.23 "/>
+                    <Label Foreground="Yellow" Name="lab2" Content="亿深 9267.53 +1.06+0.02% 745.17 "/>
+                    <Label Foreground="Yellow" Name="lab3" Content="亿创 064.99 +22.09+2.12% 164.62"/>
+                    <Label Foreground="Yellow" Name="lab4" Content="亿日经 225  4226.27 -257.71 -1.78%"/>
+                    <Label Foreground="Yellow" Name="lab5" Content="中石油  325 ++43.5 -3.5%  45.3"/>
+                    <Label Foreground="Yellow" Name="lab6" Content="道琼斯 9267.53 +1.06+0.02% 745.17 "/>
+                    <Label Foreground="Yellow" Name="lab7" Content="华为 064.99 +22.09+2.12% 164.62"/>
+                    <Label Foreground="Yellow" Name="lab8" Content="OPPO 225  4226.27 -257.71 -1.78%"/>
+                    <Label Foreground="Yellow" Name="lab9" Content="ST锐电  325 ++43.5 -3.5%  45.3"/>
+                    <Label Foreground="Yellow" Name="lab10" Content="嘉怡床器 201.50 +5.91+0.26% 629.23"/>
+                </StackPanel>
+            </Canvas>
+        </Border>
+      
+    </Grid>
+</Page>

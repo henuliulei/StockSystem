@@ -1,0 +1,38 @@
+﻿<Page x:Class="gp.selected.help1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gp.selected"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="help1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" FontSize="28" >下列问题可能对你有帮助</Label>
+            <Button Background="White" Name="btn1" Grid.Row="1" Foreground="Blue" FontSize="26" Content="如何分析一只股票,从哪里入手
+" HorizontalContentAlignment="Left" Click="btn1_Click"></Button>
+            <Button Name="btn2" Background="White" Grid.Row="2" Foreground="Blue" FontSize="26" Content="如何炒股" HorizontalContentAlignment="Left" Click="btn2_Click"></Button>
+            <Button Name="btn3" Grid.Row="3" Background="White" Foreground="Blue" FontSize="26" Content="一个人是否可以开立多个账户" HorizontalContentAlignment="Left" Click="btn3_Click"></Button>
+            <Button Name="btn4" Grid.Row="4" Background="White" Foreground="Blue" FontSize="26" Content="对系统提出建议" HorizontalContentAlignment="Left" Click="btn4_Click"></Button>
+        </Grid>
+        <Border Grid.Row="1" BorderBrush="AliceBlue" BorderThickness="13">
+            <TextBlock FontSize="20" Background="White" Name="text">
+
+            </TextBlock>
+        </Border>
+
+    </Grid>
+    </Page>

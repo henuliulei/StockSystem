@@ -1,0 +1,42 @@
+﻿<Window x:Class="gp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="570"  HorizontalAlignment="Left" Width="1000" WindowStartupLocation="CenterScreen">
+
+
+    <DockPanel Width="1000" Height="570">
+        <Grid Width="1000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="440"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackPanel Height="50"  Orientation="Horizontal" Grid.Row="0" Background="Blue">
+                <Button   Name="btn1" Content="欢迎页面" Background="Blue" FontSize="24" Foreground="Red" Margin="10,0,10,-0.4" Click="page1Button"/>
+                <Button Name="btn2" Content="股票" Click="Btn2_Click" FontSize="24" Foreground="Red" Background="Blue" Margin="10,0,10,-0.4"></Button>
+                <Button Name="btn3" Content="个人账户" Click="Btn3_Click" FontSize="24" Foreground="Red" Background="Blue" Margin="10,0,10,-0.4"></Button>
+                <Button  Name="btn4" Content="设置" FontSize="24" Height="50" Foreground="Red" Background="Blue" Click="page2Button" Margin="10,0,10,-0.4"/>
+                <Button  Name="btn5" Content="帮助" FontSize="24" Foreground="Red" Background="Blue" Click="page3Button" Margin="10,0,10,-0.4" RenderTransformOrigin="0.5,0.508" Height="50" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+
+                <GroupBox>
+                    <Frame Name="mainFrame" NavigationUIVisibility="Hidden" ></Frame>
+
+                </GroupBox>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+
+                <GroupBox>
+                    <Frame Name="mainFrame1" NavigationUIVisibility="Hidden" ></Frame>
+
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+
+    </DockPanel>
+</Window>

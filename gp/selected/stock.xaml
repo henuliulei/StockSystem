@@ -1,0 +1,106 @@
+﻿<Page x:Class="gp.View.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="Page1">
+
+    <Grid Margin="10 0" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="270*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="17" Name="stocknameid" Margin="10,0,0,-0.4" Grid.ColumnSpan="2" Grid.RowSpan="4">此处为选择的股票</TextBlock>
+        <StackPanel Orientation="Vertical" Height="159" Margin="0,0,517,165.6" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Row="1">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="可用资金:" FontSize="15" />
+                <TextBlock Name="money_free"  FontSize="15"></TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="股票余额:" FontSize="15" />
+                <TextBlock x:Name="stock_free" FontSize="15"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="单价:"  Margin="5 0 0 0"/>
+                <TextBlock Text="数量:" Margin="24 0 0 0"></TextBlock>
+                <TextBlock Text="总价:"  Margin="25 0 0 0"/>
+            </StackPanel>
+
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0 0 0"  Orientation="Horizontal">
+                <TextBox Height="15" TextWrapping="Wrap" Text="" Width="40" Name="price"/>
+                <TextBlock Text="×"></TextBlock>
+                <TextBox Height="15" TextWrapping="Wrap" Text="" Width="40" Name="undealed"/>
+                <TextBlock Text="="></TextBlock>
+                <TextBox Height="15" TextWrapping="Wrap" Text="" Width="40" Name="totolprice"/>
+            </StackPanel>
+            <Button Width="170" Background="AliceBlue" Foreground="Red" Content="买入" Margin="-200,10,25.2,0" Click="Button_Click_1"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Height="166" Margin="0,0,517,-0.4" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.Row="3">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="资金金额:" FontSize="15" />
+                <TextBlock Name="money_free1"  ></TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="可用股票:" FontSize="15" />
+                <TextBlock x:Name="stock_free1" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="单价:"  Margin="5 0 0 0"/>
+                <TextBlock Text="数量:" Margin="24 0 0 0"></TextBlock>
+                <TextBlock Text="总价:"  Margin="25 0 0 0"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0 0 0"  Orientation="Horizontal">
+                <TextBox Height="15" TextWrapping="Wrap" Text="" Width="40" Name="price1"/>
+                <TextBlock Text="×"></TextBlock>
+                <TextBox Height="15" TextWrapping="Wrap" Text="" Width="40" Name="undealed1"/>
+                <TextBlock Text="="></TextBlock>
+                <TextBox Height="15" TextWrapping="Wrap" Text="" Width="40" Name="totolprice1"/>
+            </StackPanel>
+            <Button Foreground="Yellow" Width="170" Background="AliceBlue" Content="卖出" Margin="-200,10,25.2,0" Click="Button_Click_2"/>
+        </StackPanel>
+
+
+        <Grid Margin="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="512" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="62.4"/>
+                <ColumnDefinition Width="62.4"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox FontSize="24" Margin="-200,10,0,15.2" Width="450" Grid.ColumnSpan="3" Name="stockname">
+
+            </TextBox>
+            <Button Foreground="Blue" FontSize="24" Margin="50,10,-61.8,15.2" Content="查询" Command="{Binding LoginCommand}"  Grid.Column="2" Click="Button_Click" HorizontalAlignment="Left" Width="93"/>
+        </Grid>
+        <Grid Margin="0,0,0,-0.4" Grid.ColumnSpan="2" Grid.RowSpan="4">
+
+            <DataGrid CanUserAddRows="False" Background="White" Name="dataggrid1" ItemsSource="{Binding}" AutoGenerateColumns="False"
+ Margin="250,46,0,0" HorizontalAlignment="Left" Width="488" Height="376" VerticalAlignment="Top" >
+                <DataGrid.RowStyle>
+                    <Style  TargetType="DataGridRow">
+                        <EventSetter Event="GotFocus" Handler="Item_GotFocus"/>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="股票id" Binding="{Binding stock_id}" Width="167" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="股票名称" Binding="{Binding name}"  Width="167"></DataGridTextColumn>
+                    <DataGridTextColumn Header="股票价格" Binding="{Binding price}"  Width="167"></DataGridTextColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

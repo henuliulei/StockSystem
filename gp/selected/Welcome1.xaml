@@ -1,0 +1,20 @@
+﻿<Page x:Class="gp.selected.Welcome1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gp.selected"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="Welcome1">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="a.jpg"></ImageBrush>
+        </Grid.Background>
+        <StackPanel Width="750" Height="450" >
+            <Label Content="欢迎进入股票交易系统"  FontSize="60" Foreground="Red" Height="125" Margin="35,100,10.4,0" />
+            <Label Content="开户就送一万起始资金，祝你金盆满盈"  FontSize="30" Foreground="Blue" Height="125" Margin="75,100,10.4,0" />
+        </StackPanel>
+    </Grid>
+</Page>

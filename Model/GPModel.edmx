@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="create_datetime" Type="datetime" Nullable="false" />
+          <Property Name="user_id" Type="bigint" Nullable="false" />
+          <Property Name="stock_id" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
+          <Property Name="undealed" Type="int" Nullable="false" />
+          <Property Name="dealed" Type="int" Nullable="false" />
+          <Property Name="canceled" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stocks">
+          <Key>
+            <PropertyRef Name="stock_id" />
+          </Key>
+          <Property Name="stock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="transactions">
+          <Key>
+            <PropertyRef Name="trans_id" />
+          </Key>
+          <Property Name="trans_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="create_datetime" Type="datetime" Nullable="false" />
+          <Property Name="buy_order_id" Type="bigint" Nullable="false" />
+          <Property Name="sell_order_id" Type="bigint" Nullable="false" />
+          <Property Name="dealed" Type="int" Nullable="false" />
+          <Property Name="stock_id" Type="int" Nullable="false" />
+          <Property Name="deal_price" Type="money" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_positions">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="stock_id" />
+          </Key>
+          <Property Name="user_id" Type="bigint" Nullable="false" />
+          <Property Name="stock_id" Type="int" Nullable="false" />
+          <Property Name="num_free" Type="int" Nullable="false" />
+          <Property Name="num_freezed" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="login_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="passwd" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="cny_free" Type="money" Nullable="false" />
+          <Property Name="cny_freezed" Type="money" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_orders_stocks">
+          <End Role="stocks" Type="Self.stocks" Multiplicity="1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stocks">
+              <PropertyRef Name="stock_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orders_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_orders_buy">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="buy_order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_orders_sell">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="sell_order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_stocks">
+          <End Role="stocks" Type="Self.stocks" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stocks">
+              <PropertyRef Name="stock_id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_positions_stocks">
+          <End Role="stocks" Type="Self.stocks" Multiplicity="1" />
+          <End Role="user_positions" Type="Self.user_positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stocks">
+              <PropertyRef Name="stock_id" />
+            </Principal>
+            <Dependent Role="user_positions">
+              <PropertyRef Name="stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_positions_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="user_positions" Type="Self.user_positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="user_positions">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="cancel_order" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="bigint" Mode="In" />
+          <Parameter Name="order_id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="exec_order" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="bigint" Mode="In" />
+          <Parameter Name="stock_id" Type="int" Mode="In" />
+          <Parameter Name="type" Type="int" Mode="In" />
+          <Parameter Name="price" Type="money" Mode="In" />
+          <Parameter Name="amount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="stock_depth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="stock_id" Type="int" Mode="In" />
+          <Parameter Name="type" Type="int" Mode="In" />
+        </Function>
+        <Function Name="user_cny" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="bigint" Mode="In" />
+          <Parameter Name="cny_free" Type="money" Mode="InOut" />
+          <Parameter Name="cny_freezed" Type="money" Mode="InOut" />
+          <Parameter Name="gp_money" Type="money" Mode="InOut" />
+        </Function>
+        <Function Name="user_create" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="login_name" Type="varchar" Mode="In" />
+          <Parameter Name="passwd" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="type" Type="int" Mode="In" />
+          <Parameter Name="cny_free" Type="money" Mode="In" />
+        </Function>
+        <Function Name="user_login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="login_name" Type="varchar" Mode="In" />
+          <Parameter Name="passwd" Type="varchar" Mode="In" />
+          <Parameter Name="user_id" Type="bigint" Mode="InOut" />
+          <Parameter Name="name" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="type" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="user_order" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="user_repasswd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="bigint" Mode="In" />
+          <Parameter Name="old_passwd" Type="varchar" Mode="In" />
+          <Parameter Name="new_passwd" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="user_stock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="GPModelStoreContainer">
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stocks" EntityType="Self.stocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transactions" EntityType="Self.transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_positions" EntityType="Self.user_positions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_orders_stocks" Association="Self.FK_orders_stocks">
+            <End Role="stocks" EntitySet="stocks" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orders_users" Association="Self.FK_orders_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_orders_buy" Association="Self.FK_transactions_orders_buy">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_orders_sell" Association="Self.FK_transactions_orders_sell">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_stocks" Association="Self.FK_transactions_stocks">
+            <End Role="stocks" EntitySet="stocks" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_positions_stocks" Association="Self.FK_user_positions_stocks">
+            <End Role="stocks" EntitySet="stocks" />
+            <End Role="user_positions" EntitySet="user_positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_positions_users" Association="Self.FK_user_positions_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_positions" EntitySet="user_positions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="create_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="user_id" Type="Int64" Nullable="false" />
+          <Property Name="stock_id" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="undealed" Type="Int32" Nullable="false" />
+          <Property Name="dealed" Type="Int32" Nullable="false" />
+          <Property Name="canceled" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="stocks" Relationship="Self.FK_orders_stocks" FromRole="orders" ToRole="stocks" />
+          <NavigationProperty Name="users" Relationship="Self.FK_orders_users" FromRole="orders" ToRole="users" />
+          <NavigationProperty Name="transactions" Relationship="Self.FK_transactions_orders_buy" FromRole="orders" ToRole="transactions" />
+          <NavigationProperty Name="transactions1" Relationship="Self.FK_transactions_orders_sell" FromRole="orders" ToRole="transactions" />
+        </EntityType>
+        <EntityType Name="stocks">
+          <Key>
+            <PropertyRef Name="stock_id" />
+          </Key>
+          <Property Name="stock_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="orders" Relationship="Self.FK_orders_stocks" FromRole="stocks" ToRole="orders" />
+          <NavigationProperty Name="transactions" Relationship="Self.FK_transactions_stocks" FromRole="stocks" ToRole="transactions" />
+          <NavigationProperty Name="user_positions" Relationship="Self.FK_user_positions_stocks" FromRole="stocks" ToRole="user_positions" />
+        </EntityType>
+        <EntityType Name="transactions">
+          <Key>
+            <PropertyRef Name="trans_id" />
+          </Key>
+          <Property Name="trans_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="create_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="buy_order_id" Type="Int64" Nullable="false" />
+          <Property Name="sell_order_id" Type="Int64" Nullable="false" />
+          <Property Name="dealed" Type="Int32" Nullable="false" />
+          <Property Name="stock_id" Type="Int32" Nullable="false" />
+          <Property Name="deal_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="orders" Relationship="Self.FK_transactions_orders_buy" FromRole="transactions" ToRole="orders" />
+          <NavigationProperty Name="orders1" Relationship="Self.FK_transactions_orders_sell" FromRole="transactions" ToRole="orders" />
+          <NavigationProperty Name="stocks" Relationship="Self.FK_transactions_stocks" FromRole="transactions" ToRole="stocks" />
+        </EntityType>
+        <EntityType Name="user_positions">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="stock_id" />
+          </Key>
+          <Property Name="user_id" Type="Int64" Nullable="false" />
+          <Property Name="stock_id" Type="Int32" Nullable="false" />
+          <Property Name="num_free" Type="Int32" Nullable="false" />
+          <Property Name="num_freezed" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="stocks" Relationship="Self.FK_user_positions_stocks" FromRole="user_positions" ToRole="stocks" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_positions_users" FromRole="user_positions" ToRole="users" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="login_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwd" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="cny_free" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="cny_freezed" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="orders" Relationship="Self.FK_orders_users" FromRole="users" ToRole="orders" />
+          <NavigationProperty Name="user_positions" Relationship="Self.FK_user_positions_users" FromRole="users" ToRole="user_positions" />
+        </EntityType>
+        <Association Name="FK_orders_stocks">
+          <End Role="stocks" Type="Self.stocks" Multiplicity="1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stocks">
+              <PropertyRef Name="stock_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orders_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_orders_buy">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="buy_order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_orders_sell">
+          <End Role="orders" Type="Self.orders" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="sell_order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_stocks">
+          <End Role="stocks" Type="Self.stocks" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stocks">
+              <PropertyRef Name="stock_id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_positions_stocks">
+          <End Role="stocks" Type="Self.stocks" Multiplicity="1" />
+          <End Role="user_positions" Type="Self.user_positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="stocks">
+              <PropertyRef Name="stock_id" />
+            </Principal>
+            <Dependent Role="user_positions">
+              <PropertyRef Name="stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_positions_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="user_positions" Type="Self.user_positions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="user_positions">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="orders" EntityType="Self.orders" />
+          <EntitySet Name="stocks" EntityType="Self.stocks" />
+          <EntitySet Name="transactions" EntityType="Self.transactions" />
+          <EntitySet Name="user_positions" EntityType="Self.user_positions" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_orders_stocks" Association="Self.FK_orders_stocks">
+            <End Role="stocks" EntitySet="stocks" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orders_users" Association="Self.FK_orders_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_orders_buy" Association="Self.FK_transactions_orders_buy">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_orders_sell" Association="Self.FK_transactions_orders_sell">
+            <End Role="orders" EntitySet="orders" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_stocks" Association="Self.FK_transactions_stocks">
+            <End Role="stocks" EntitySet="stocks" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_positions_stocks" Association="Self.FK_user_positions_stocks">
+            <End Role="stocks" EntitySet="stocks" />
+            <End Role="user_positions" EntitySet="user_positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_positions_users" Association="Self.FK_user_positions_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_positions" EntitySet="user_positions" />
+          </AssociationSet>
+          <FunctionImport Name="cancel_order" ReturnType="Collection(Int32)">
+            <Parameter Name="user_id" Mode="In" Type="Int64" />
+            <Parameter Name="order_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="exec_order" ReturnType="Collection(Int32)">
+            <Parameter Name="user_id" Mode="In" Type="Int64" />
+            <Parameter Name="stock_id" Mode="In" Type="Int32" />
+            <Parameter Name="type" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="amount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="stock_depth" ReturnType="Collection(GPModel.stock_depth_Result)">
+            <Parameter Name="stock_id" Mode="In" Type="Int32" />
+            <Parameter Name="type" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="user_cny">
+            <Parameter Name="user_id" Mode="In" Type="Int64" />
+            <Parameter Name="cny_free" Mode="InOut" Type="Decimal" />
+            <Parameter Name="cny_freezed" Mode="InOut" Type="Decimal" />
+            <Parameter Name="gp_money" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="user_create" ReturnType="Collection(Int32)">
+            <Parameter Name="login_name" Mode="In" Type="String" />
+            <Parameter Name="passwd" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="type" Mode="In" Type="Int32" />
+            <Parameter Name="cny_free" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="user_login">
+            <Parameter Name="login_name" Mode="In" Type="String" />
+            <Parameter Name="passwd" Mode="In" Type="String" />
+            <Parameter Name="user_id" Mode="InOut" Type="Int64" />
+            <Parameter Name="name" Mode="InOut" Type="String" />
+            <Parameter Name="type" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="user_order" ReturnType="Collection(GPModel.user_order_Result)">
+            <Parameter Name="user_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="user_repasswd" ReturnType="Collection(Int32)">
+            <Parameter Name="user_id" Mode="In" Type="Int64" />
+            <Parameter Name="old_passwd" Mode="In" Type="String" />
+            <Parameter Name="new_passwd" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="user_stock" ReturnType="Collection(GPModel.user_stock_Result)">
+            <Parameter Name="user_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="stock_depth_Result">
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="num" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="user_order_Result">
+          <Property Type="Int64" Name="order_id" Nullable="false" />
+          <Property Type="DateTime" Name="create_datetime" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="stock_id" Nullable="false" />
+          <Property Type="Int32" Name="type" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="undealed" Nullable="false" />
+          <Property Type="Int32" Name="dealed" Nullable="false" />
+          <Property Type="Int32" Name="canceled" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="user_stock_Result">
+          <Property Type="Int32" Name="stock_id" Nullable="false" />
+          <Property Type="Int32" Name="num_free" Nullable="false" />
+          <Property Type="Int32" Name="num_freezed" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GPModelStoreContainer" CdmEntityContainer="GPEntities">
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="GPModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="create_datetime" ColumnName="create_datetime" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="undealed" ColumnName="undealed" />
+                <ScalarProperty Name="dealed" ColumnName="dealed" />
+                <ScalarProperty Name="canceled" ColumnName="canceled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stocks">
+            <EntityTypeMapping TypeName="GPModel.stocks">
+              <MappingFragment StoreEntitySet="stocks">
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transactions">
+            <EntityTypeMapping TypeName="GPModel.transactions">
+              <MappingFragment StoreEntitySet="transactions">
+                <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+                <ScalarProperty Name="create_datetime" ColumnName="create_datetime" />
+                <ScalarProperty Name="buy_order_id" ColumnName="buy_order_id" />
+                <ScalarProperty Name="sell_order_id" ColumnName="sell_order_id" />
+                <ScalarProperty Name="dealed" ColumnName="dealed" />
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="deal_price" ColumnName="deal_price" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_positions">
+            <EntityTypeMapping TypeName="GPModel.user_positions">
+              <MappingFragment StoreEntitySet="user_positions">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="num_free" ColumnName="num_free" />
+                <ScalarProperty Name="num_freezed" ColumnName="num_freezed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="GPModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="login_name" ColumnName="login_name" />
+                <ScalarProperty Name="passwd" ColumnName="passwd" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="cny_free" ColumnName="cny_free" />
+                <ScalarProperty Name="cny_freezed" ColumnName="cny_freezed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="cancel_order" FunctionName="GPModel.Store.cancel_order" />
+          <FunctionImportMapping FunctionImportName="exec_order" FunctionName="GPModel.Store.exec_order" />
+          <FunctionImportMapping FunctionImportName="stock_depth" FunctionName="GPModel.Store.stock_depth">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GPModel.stock_depth_Result">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="num" ColumnName="num" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="user_cny" FunctionName="GPModel.Store.user_cny" />
+          <FunctionImportMapping FunctionImportName="user_create" FunctionName="GPModel.Store.user_create" />
+          <FunctionImportMapping FunctionImportName="user_login" FunctionName="GPModel.Store.user_login" />
+          <FunctionImportMapping FunctionImportName="user_order" FunctionName="GPModel.Store.user_order">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GPModel.user_order_Result">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="create_datetime" ColumnName="create_datetime" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="undealed" ColumnName="undealed" />
+                <ScalarProperty Name="dealed" ColumnName="dealed" />
+                <ScalarProperty Name="canceled" ColumnName="canceled" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="user_repasswd" FunctionName="GPModel.Store.user_repasswd" />
+          <FunctionImportMapping FunctionImportName="user_stock" FunctionName="GPModel.Store.user_stock">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GPModel.user_stock_Result">
+                <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+                <ScalarProperty Name="num_free" ColumnName="num_free" />
+                <ScalarProperty Name="num_freezed" ColumnName="num_freezed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

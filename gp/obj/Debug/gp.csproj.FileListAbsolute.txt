@@ -1,0 +1,174 @@
+D:\gb1\gp\gp\bin\Debug\gp.exe.config
+D:\gb1\gp\gp\bin\Debug\gp.exe
+D:\gb1\gp\gp\bin\Debug\gp.pdb
+D:\gb1\gp\gp\obj\Debug\LoginWindow.g.cs
+D:\gb1\gp\gp\obj\Debug\MainWindow.g.cs
+D:\gb1\gp\gp\obj\Debug\selected\stock.g.cs
+D:\gb1\gp\gp\obj\Debug\selected\SheZhi.g.cs
+D:\gb1\gp\gp\obj\Debug\register.g.cs
+D:\gb1\gp\gp\obj\Debug\selected\Welcome1.g.cs
+D:\gb1\gp\gp\obj\Debug\App.g.cs
+D:\gb1\gp\gp\obj\Debug\gp_MarkupCompile.cache
+D:\gb1\gp\gp\obj\Debug\gp_MarkupCompile.lref
+D:\gb1\gp\gp\obj\Debug\LoginWindow.baml
+D:\gb1\gp\gp\obj\Debug\MainWindow.baml
+D:\gb1\gp\gp\obj\Debug\selected\stock.baml
+D:\gb1\gp\gp\obj\Debug\selected\SheZhi.baml
+D:\gb1\gp\gp\obj\Debug\register.baml
+D:\gb1\gp\gp\obj\Debug\selected\Welcome1.baml
+D:\gb1\gp\gp\obj\Debug\gp.g.resources
+D:\gb1\gp\gp\obj\Debug\gp.Properties.Resources.resources
+D:\gb1\gp\gp\obj\Debug\gp.csproj.GenerateResource.cache
+D:\gb1\gp\gp\obj\Debug\gp.csproj.CoreCompileInputs.cache
+D:\gb1\gp\gp\obj\Debug\gp.exe
+D:\gb1\gp\gp\obj\Debug\gp.pdb
+D:\gb1\gp\gp\obj\Debug\selected\Zhanghu1.g.cs
+D:\gb1\gp\gp\obj\Debug\selected\Zhanghu1.baml
+D:\gb1\gp\gp\obj\Debug\Interop.SpeechLib.dll
+D:\gb1\gp\gp\obj\Debug\gp.csproj.ResolveComReference.cache
+D:\gb1\gp\gp\obj\Debug\selected\circle.g.cs
+D:\gb1\gp\gp\obj\Debug\selected\circle.baml
+D:\gb1\gp\gp\obj\Debug\gp.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\bin\Debug\gp.exe.config
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\bin\Debug\gp.exe
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\bin\Debug\gp.pdb
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\Interop.SpeechLib.dll
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csproj.ResolveComReference.cache
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\LoginWindow.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\circle.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\stock.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\SheZhi.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\register.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Welcome1.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Zhanghu1.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\App.g.cs
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp_MarkupCompile.cache
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp_MarkupCompile.lref
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\LoginWindow.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\MainWindow.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\circle.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\stock.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\SheZhi.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\register.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Welcome1.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Zhanghu1.baml
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.g.resources
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.exe
+C:\Users\Administrator\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.pdb
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\bin\Debug\gp.exe.config
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\bin\Debug\gp.exe
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\bin\Debug\gp.pdb
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\Interop.SpeechLib.dll
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csproj.ResolveComReference.cache
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\LoginWindow.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\MainWindow.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\circle.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\stock.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\SheZhi.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\register.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Welcome1.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Zhanghu1.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\App.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp_MarkupCompile.cache
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp_MarkupCompile.lref
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\LoginWindow.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\MainWindow.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\circle.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\stock.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\SheZhi.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\register.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Welcome1.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\Zhanghu1.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.g.resources
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.Properties.Resources.resources
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csproj.GenerateResource.cache
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csproj.CoreCompileInputs.cache
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.exe
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.pdb
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\Messagebox\MessageBoxOk.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\Messagebox\MessageBoxOk.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\help1.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\selected\help1.baml
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp_Content.g.cs
+C:\Users\19575\Desktop\gb1 (1)\gb1\gp\gp\obj\Debug\gp.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\gp\gp\bin\Debug\gp.exe.config
+C:\Users\Administrator\Desktop\gp\gp\bin\Debug\gp.exe
+C:\Users\Administrator\Desktop\gp\gp\bin\Debug\gp.pdb
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\Interop.SpeechLib.dll
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.csproj.ResolveComReference.cache
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\Messagebox\MessageBoxOK.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\LoginWindow.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\Messagebox\MessageBoxOK.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\Messagebox\MessageBoxOKCancle.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\circle.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\help1.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\stock.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\SheZhi.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\register.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\Welcome1.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\Zhanghu1.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\App.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp_Content.g.cs
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp_MarkupCompile.cache
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp_MarkupCompile.lref
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\LoginWindow.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\MainWindow.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\Messagebox\MessageBoxOKCancle.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\circle.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\help1.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\stock.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\SheZhi.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\register.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\Welcome1.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\selected\Zhanghu1.baml
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.g.resources
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.exe
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.pdb
+C:\Users\Administrator\Desktop\gp\gp\obj\Debug\gp.csprojAssemblyReference.cache
+C:\Users\19575\Desktop\gp2\gp\gp\bin\Debug\gp.exe.config
+C:\Users\19575\Desktop\gp2\gp\gp\bin\Debug\gp.exe
+C:\Users\19575\Desktop\gp2\gp\gp\bin\Debug\gp.pdb
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\Interop.SpeechLib.dll
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.csproj.ResolveComReference.cache
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\Messagebox\MessageBoxOK.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\LoginWindow.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\MainWindow.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\Messagebox\MessageBoxOK.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\Messagebox\MessageBoxOKCancle.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\circle.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\help1.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\stock.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\SheZhi.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\register.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\Welcome1.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\Zhanghu1.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\App.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp_Content.g.cs
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp_MarkupCompile.cache
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp_MarkupCompile.lref
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\LoginWindow.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\MainWindow.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\Messagebox\MessageBoxOKCancle.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\circle.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\help1.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\stock.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\SheZhi.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\register.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\Welcome1.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\selected\Zhanghu1.baml
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.g.resources
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.Properties.Resources.resources
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.csproj.GenerateResource.cache
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.csproj.CoreCompileInputs.cache
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.exe
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.pdb
+C:\Users\19575\Desktop\gp2\gp\gp\obj\Debug\gp.csprojAssemblyReference.cache

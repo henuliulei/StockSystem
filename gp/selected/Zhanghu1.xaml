@@ -1,0 +1,61 @@
+﻿<Page x:Class="gp.selected.Zhanghu1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gp.selected"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+      Title="Zhanghu1">
+    <Grid  Margin="0 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Background="AliceBlue" HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,0,4,0.2" Width="1000">
+                <TextBlock FontSize="24"  Text="欢迎您," Margin="350 10 10 0" Width="70" Foreground="Blue"/>
+                <TextBlock FontSize="24"  Text="用户:" Margin="0 10 0 0" Name="username" Foreground="Blue" />
+                <TextBlock Name="text" FontSize="34" Foreground="Red" > </TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="462*"/>
+                <ColumnDefinition Width="539*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid CanUserAddRows="False"  Background="White" Name="dataggrid1" ItemsSource="{Binding}" AutoGenerateColumns="False"
+                HorizontalAlignment="Left" Width="488" Height="376" VerticalAlignment="Top" >
+               
+
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="股票id" Binding="{Binding stock_id}" Width="77" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="股票名称" Binding="{Binding name}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="股票价格" Binding="{Binding price}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="持股数量" Binding="{Binding num_free}" Width="77" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="可用数量" Binding="{Binding num_free}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="冻结数量" Binding="{Binding num_freezed}"  Width="77"></DataGridTextColumn>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid CanUserAddRows="False" Grid.Column="1" Background="White" Name="dataggrid2" ItemsSource="{Binding}" AutoGenerateColumns="False"
+                HorizontalAlignment="Left" Width="539" Height="400" VerticalAlignment="Top" >
+                
+
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="创建时间" Binding="{Binding create_datetime}" Width="77" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="股票名称" Binding="{Binding name}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="委托类型" Binding="{Binding type}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="委托价格" Binding="{Binding price}" Width="77" ></DataGridTextColumn>
+                    <DataGridTextColumn Header="未成交" Binding="{Binding undealed}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="已成交" Binding="{Binding dealed}"  Width="77"></DataGridTextColumn>
+                    <DataGridTextColumn Header="已取消" Binding="{Binding canceled}"  Width="77"></DataGridTextColumn>
+                </DataGrid.Columns>
+
+            </DataGrid>
+           
+        </Grid>
+        
+    </Grid>
+</Page>
